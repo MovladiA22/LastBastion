@@ -1,0 +1,29 @@
+{
+    "name": "BasesAssembly",
+    "rootNamespace": "LastBastion.Bases",
+    "references": [
+        "GUID:6ea00311546c74840a1d3da45e1bfdd7",
+        "GUID:e50cdb2df71685f4baa97b3f6d5bcd28",
+        "GUID:577bab72f7e0c574b9b08c390fe971b5",
+        "GUID:6396912b96a01cb4085297d5f3533eb0",
+        "GUID:678b740746c9f784486363afdff7b7f4",
+        "GUID:a2f0ae12cc0178e48ade42ec66dcf387",
+        "GUID:0808ab755b6137c41a0b03643064b623",
+        "GUID:99ae898e59e6ddd41a31334d00cd9795",
+        "GUID:d293af81b37d9d14e821594cb513df6e",
+        "GUID:45af71fa3662aed4f8910941dc61f3c8",
+        "GUID:24ca92ba60d4a414ea9ba14e1527687a",
+        "GUID:f0f34493d24f24542a698743cb39d8e7",
+        "GUID:1176e83b977116746a26552d2c3e2c56",
+        "GUID:861aa80b42e7c8640afcd55a09891a97"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

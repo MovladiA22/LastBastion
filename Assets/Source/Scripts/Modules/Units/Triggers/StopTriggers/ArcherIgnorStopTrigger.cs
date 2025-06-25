@@ -1,0 +1,15 @@
+﻿using UnityEngine;
+
+namespace LastBastion.Units
+{
+    internal class ArcherIgnorStopTrigger: PlayerStopTrigger
+    {
+        protected override bool IsNeedingStopper(Collider2D collision)
+        {
+            if (collision.TryGetComponent<Archer>(out _))
+                return false;
+
+            return base.IsNeedingStopper(collision);
+        }
+    }
+}

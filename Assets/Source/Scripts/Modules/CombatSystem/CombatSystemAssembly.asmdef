@@ -1,0 +1,22 @@
+{
+    "name": "CombatSystemAssembly",
+    "rootNamespace": "LastBastion.CombatSystem",
+    "references": [
+        "GUID:1176e83b977116746a26552d2c3e2c56",
+        "GUID:f0f34493d24f24542a698743cb39d8e7",
+        "GUID:a2f0ae12cc0178e48ade42ec66dcf387",
+        "GUID:d293af81b37d9d14e821594cb513df6e",
+        "GUID:45af71fa3662aed4f8910941dc61f3c8",
+        "GUID:24ca92ba60d4a414ea9ba14e1527687a",
+        "GUID:861aa80b42e7c8640afcd55a09891a97"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

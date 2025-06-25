@@ -1,0 +1,16 @@
+{
+    "name": "InterfacesAssembly",
+    "rootNamespace": "Common.Interfaces",
+    "references": [
+        "GUID:24ca92ba60d4a414ea9ba14e1527687a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

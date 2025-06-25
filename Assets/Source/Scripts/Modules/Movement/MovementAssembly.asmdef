@@ -1,0 +1,17 @@
+{
+    "name": "MovementAssembly",
+    "rootNamespace": "LastBastion.Movement",
+    "references": [
+        "GUID:1176e83b977116746a26552d2c3e2c56",
+        "GUID:861aa80b42e7c8640afcd55a09891a97"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

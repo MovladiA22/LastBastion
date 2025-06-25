@@ -1,0 +1,19 @@
+{
+    "name": "UIViewAssembly",
+    "rootNamespace": "Common.UI.View",
+    "references": [
+        "GUID:0808ab755b6137c41a0b03643064b623",
+        "GUID:d293af81b37d9d14e821594cb513df6e",
+        "GUID:a2f0ae12cc0178e48ade42ec66dcf387",
+        "GUID:24ca92ba60d4a414ea9ba14e1527687a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
