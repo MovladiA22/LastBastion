@@ -1,0 +1,18 @@
+{
+    "name": "ResourceSystemAssembly",
+    "rootNamespace": "LastBastion.ResourceSystem",
+    "references": [
+        "GUID:24ca92ba60d4a414ea9ba14e1527687a",
+        "GUID:ad4560cd0ea3a8141b842dd266c4b6d8",
+        "GUID:a45dd5522fbe2a94494e7533966e048f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,21 @@
+{
+    "name": "UnitsAssembly",
+    "rootNamespace": "LastBastion.Units",
+    "references": [
+        "GUID:6ea00311546c74840a1d3da45e1bfdd7",
+        "GUID:4e8c8fd2cc6709c4aaf9668a9a387257",
+        "GUID:678b740746c9f784486363afdff7b7f4",
+        "GUID:d293af81b37d9d14e821594cb513df6e",
+        "GUID:24ca92ba60d4a414ea9ba14e1527687a",
+        "GUID:ad4560cd0ea3a8141b842dd266c4b6d8"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -379,6 +379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _duration: 0.2
   _transparency: 0.5
+  _renderer: {fileID: 2572889983467007884}
 --- !u!114 &3891032086117502661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,6 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthValue: 40
+  _damageReaction: {fileID: 4362722688786763535}
   _moveStopTrigger: {fileID: 4550355136323538306}
   <AttackSystem>k__BackingField: {fileID: 4559722502482350653}
   <BountyGold>k__BackingField: 30

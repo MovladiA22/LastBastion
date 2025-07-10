@@ -1,0 +1,19 @@
+{
+    "name": "UnitSpawnersAssembly",
+    "rootNamespace": "LastBastion.UnitSpawners",
+    "references": [
+        "GUID:577bab72f7e0c574b9b08c390fe971b5",
+        "GUID:d293af81b37d9d14e821594cb513df6e",
+        "GUID:ad4560cd0ea3a8141b842dd266c4b6d8",
+        "GUID:a45dd5522fbe2a94494e7533966e048f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

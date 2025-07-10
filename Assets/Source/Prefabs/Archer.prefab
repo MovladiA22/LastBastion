@@ -192,6 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthValue: 50
   _moveStopTrigger: {fileID: 3451689199552190029}
+  _damageReaction: {fileID: 1333649362502927461}
   <AttackSystem>k__BackingField: {fileID: 3554117691885470354}
 --- !u!114 &3554117691885470354
 MonoBehaviour:
@@ -210,7 +211,7 @@ MonoBehaviour:
   _attackCooldown: 1.8
   _damageDelay: 0.01
   <AttackSound>k__BackingField: {fileID: 368716834577114631}
-  _projectile: {fileID: 6259118856132337667}
+  _projectile: {fileID: 8982022561641013448}
   _outOfBoundsTrigger: {fileID: 3609932203892574098}
 --- !u!114 &1333649362502927461
 MonoBehaviour:
@@ -224,6 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ae946251baaf244919b75563ede4bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderer: {fileID: 8520539187502520203}
   _duration: 0.2
   _transparency: 0.5
 --- !u!114 &4996942762690469067
@@ -265,7 +267,7 @@ GameObject:
   - component: {fileID: 774876373865630407}
   - component: {fileID: 9026181907594510658}
   - component: {fileID: 3011344620819291153}
-  - component: {fileID: 6259118856132337667}
+  - component: {fileID: 8982022561641013448}
   m_Layer: 6
   m_Name: Arrow
   m_TagString: Untagged
@@ -402,7 +404,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6259118856132337667
+--- !u!114 &8982022561641013448
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -411,11 +413,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2348778947131245480}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7067eb010d6d0c543bc66ea3a0da34f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 7916edfb59f990b4083a83222cb60736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shootForce: 5
-  _shootDelayTime: 0.36
+  _shootForce: 4.5
+  _shootDelayTime: 0.35
 --- !u!1 &2957704655438973970
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +591,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ed7bd974187e304aa200d99a36ff7ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ignoreCollider: {fileID: 7188093137057886499}
 --- !u!114 &6262927388307335996
 MonoBehaviour:
   m_ObjectHideFlags: 0

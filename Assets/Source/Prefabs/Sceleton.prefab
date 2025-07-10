@@ -470,6 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthValue: 50
   _moveStopTrigger: {fileID: 1432114260692379238}
+  _damageReaction: {fileID: 8005069872594585908}
   <AttackSystem>k__BackingField: {fileID: 6574004353840471905}
   <BountyGold>k__BackingField: 20
 --- !u!114 &6574004353840471905
@@ -487,7 +488,7 @@ MonoBehaviour:
   _attackTrigger: {fileID: 800033931059518826}
   _damageValue: 10
   _attackCooldown: 2
-  _damageDelay: 0.6
+  _damageDelay: 0.9
   <AttackSound>k__BackingField: {fileID: 3587005759232270138}
 --- !u!114 &8005069872594585908
 MonoBehaviour:
@@ -501,6 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ae946251baaf244919b75563ede4bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderer: {fileID: 8808958717526730485}
   _duration: 0.2
   _transparency: 0.5
 --- !u!114 &7582438052237003977

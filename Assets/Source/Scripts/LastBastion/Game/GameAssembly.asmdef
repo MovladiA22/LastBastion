@@ -1,0 +1,21 @@
+{
+    "name": "GameAssembly",
+    "rootNamespace": "LastBastion.Game",
+    "references": [
+        "GUID:b9cff4b4d81a59f4d996ded406f68082",
+        "GUID:ed803f70884d93e4e86adbe252ffdce6",
+        "GUID:a45dd5522fbe2a94494e7533966e048f",
+        "GUID:ad4560cd0ea3a8141b842dd266c4b6d8",
+        "GUID:24ca92ba60d4a414ea9ba14e1527687a",
+        "GUID:6396912b96a01cb4085297d5f3533eb0"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
