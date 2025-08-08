@@ -20,7 +20,7 @@ namespace LastBastion.BlessingSystem
         private float _timer = 0f;
 
         public UpgradeLevel Level => _blessingAccessUpgrader.Level;
-        public IVariableInt FaithPoints => _faithPoints;
+        public IVariable<int> FaithPoints => _faithPoints;
         public IUpgrader Upgrader => _blessingAccessUpgrader;
 
         public override void Init()
@@ -36,7 +36,7 @@ namespace LastBastion.BlessingSystem
         {
             base.Activate();
 
-            _faithPoints.ReplenishFullValue();
+            _faithPoints.SetValue(_faithPoints.MaxValue);
 
             foreach (var blessing in _blessings)
                 blessing.OnActivatedForPay += OnHandleBlessingUse;

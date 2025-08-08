@@ -10,8 +10,8 @@ namespace Common.UI.View
         [SerializeField] private List<AccessCostableLockableButton> _buttons;
 
         public bool IsActivated { get; private set; }
-        protected abstract IVariableInt Level { get; }
-        protected abstract IVariableInt Money { get; }
+        protected abstract IVariable<int> Level { get; }
+        protected abstract IVariable<int> Money { get; }
 
         public virtual void Activate()
         {

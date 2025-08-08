@@ -14,6 +14,7 @@ namespace LastBastion.Bases.PlayerBase
     internal class PlayerGarrison : BaseGarrison, IUpgradable
     {
         private const int ProvisionCutoffLimit = 1;
+        private const int OneHundredMultiplier = 100;
 
         private readonly List<PlayerUnitSpawner> _unitSpawners = new();
 
@@ -54,7 +55,7 @@ namespace LastBastion.Bases.PlayerBase
             base.Work();
 
             if (KeeperOfTriggerdOpponents.IsEmpty && UnitСommander.NumberOfUnits == 0)
-                _provisions.UpdateProvisionsIncrease();
+                _provisions.UpdateProvisionsIncrease(Payable.Money.CurrentValue / OneHundredMultiplier);
             else if (UnitСommander.NumberOfUnits > ProvisionCutoffLimit)
                 _provisions.UpdateProvisionsDecrease(UnitСommander.NumberOfUnits);
         }

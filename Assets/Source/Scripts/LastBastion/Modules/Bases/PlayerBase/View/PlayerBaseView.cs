@@ -3,6 +3,7 @@ using Common.UI.Output;
 using Common.UnityUtilities.Behaviors;
 using LastBastion.BlessingSystem.View;
 using LastBastion.DefensiveSystem.View;
+using Common.VariableSystem.Interfaces;
 
 namespace LastBastion.Bases.PlayerBase.View
 {

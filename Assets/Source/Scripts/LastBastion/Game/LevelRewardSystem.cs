@@ -24,6 +24,9 @@ namespace LastBastion.Game
 
         private void OnHandleLevelPassing()
         {
+            if (_levelLauncher.CurrentLevel <= LevelLauncher.FirstLevel || _levelLauncher.CurrentLevel > _levelLauncher.NumberOfLevels)
+                return;
+
             int levelIndexlOffset = 1;
 
             if (_levelLauncher.NumberOfLevels - levelIndexlOffset != _levelRewardMoney.Length)

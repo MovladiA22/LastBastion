@@ -8,8 +8,8 @@ namespace LastBastion.DefensiveSystem.View
     {
         [SerializeField] private DefensiveWeaponsSystem _defensiveSystem;
 
-        protected override IVariableInt Level => _defensiveSystem.Level;
-        protected override IVariableInt Money => _defensiveSystem.Payable.Money;
+        protected override IVariable<int> Level => _defensiveSystem.Level;
+        protected override IVariable<int> Money => _defensiveSystem.Payable.Money;
 
         protected override void OnHandleClick(int index)
         {

@@ -9,17 +9,18 @@ namespace Common.UI.Output
     {
         [SerializeField] private Slider _slider;
 
-        private IVariableInt _variable;
+        private IVariable<float> _variable;
 
-        protected float SliderValue => _slider.value;
-
-        protected virtual void OnDisable()
+        private void OnDisable()
         {
             if (_variable != null)
+            {
                 _variable.OnChanged -= Render;
+                _variable = null;
+            }
         }
 
-        public void SetVariable(IVariableInt variable)
+        public void SetVariable(IVariable<float> variable)
         {
             _variable = variable ?? throw new ArgumentNullException(nameof(variable));
             _variable.OnChanged += Render;
@@ -30,7 +31,7 @@ namespace Common.UI.Output
         private void Render()
         {
             if (_slider != null)
-                _slider.value = (float)_variable.CurrentValue / _variable.MaxValue;
+                _slider.value = _variable.CurrentValue / _variable.MaxValue;
         }
     }
 }

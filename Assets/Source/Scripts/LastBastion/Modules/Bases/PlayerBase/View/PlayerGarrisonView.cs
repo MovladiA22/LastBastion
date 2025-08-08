@@ -8,8 +8,8 @@ namespace LastBastion.Bases.PlayerBase.View
     {
         [SerializeField] private PlayerGarrison _playerGarrison;
 
-        protected override IVariableInt Level => _playerGarrison.Level;
-        protected override IVariableInt Money => _playerGarrison.Payable.Money;
+        protected override IVariable<int> Level => _playerGarrison.Level;
+        protected override IVariable<int> Money => _playerGarrison.Payable.Money;
 
         protected override void TryUnlockButton(AccessCostableLockableButton button)
         {

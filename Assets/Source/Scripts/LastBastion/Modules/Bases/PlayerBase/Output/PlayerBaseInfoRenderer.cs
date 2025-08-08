@@ -11,7 +11,6 @@ namespace LastBastion.Bases.PlayerBase.Output
         [SerializeField] private PlayerBase _playerBase;
         [SerializeField] private VariableIntTextRenderer _healthRenderer;
         [SerializeField] private VariableIntTextRenderer _moneyRenderer;
-        [SerializeField] private VariableIntTextRenderer _provisionsRenderer;
         [SerializeField] private PlayerUnitsCountRenderer _unitsCountRenderer;
         [SerializeField] private BlessingsCountRenderer _blessingsCountRenderer;
         [SerializeField] private DefensiveWeaponsCountRenderer _defensiveWeaponsCountRenderer;
@@ -20,7 +19,6 @@ namespace LastBastion.Bases.PlayerBase.Output
         {
             _healthRenderer.SetVariable(_playerBase.IHealth);
             _moneyRenderer.SetVariable(_playerBase.Money);
-            _provisionsRenderer.SetVariable(_playerBase.Provisions);
             _blessingsCountRenderer.Init();
             _defensiveWeaponsCountRenderer.Init();
 
@@ -33,7 +31,6 @@ namespace LastBastion.Bases.PlayerBase.Output
 
             _healthRenderer.Activate();
             _moneyRenderer.Activate();
-            _provisionsRenderer.Activate();
             _unitsCountRenderer.Activate();
             _blessingsCountRenderer.Activate();
             _defensiveWeaponsCountRenderer.Activate();
@@ -45,7 +42,6 @@ namespace LastBastion.Bases.PlayerBase.Output
 
             _healthRenderer.Deactivate();
             _moneyRenderer.Deactivate();
-            _provisionsRenderer.Deactivate();
             _unitsCountRenderer.Deactivate();
             _blessingsCountRenderer.Deactivate();
             _defensiveWeaponsCountRenderer.Deactivate();

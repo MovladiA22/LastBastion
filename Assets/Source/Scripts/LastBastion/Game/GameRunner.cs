@@ -1,6 +1,8 @@
 ﻿using LastBastion.Game.Menu;
+using LastBastion.Game.UI;
 using Common.UI.Input;
 using UnityEngine;
+using YG;
 
 namespace LastBastion.Game
 {
@@ -10,9 +12,11 @@ namespace LastBastion.Game
         [SerializeField] private ButtonClickHandler _gameStartButton;
         [SerializeField] private SettingsPanel _settingsMenu;
         [SerializeField] private GameProcessor _gameProcessor;
+        [SerializeField] private GameObject _victoriousPanel;
 
         private void Awake()
         {
+            _victoriousPanel.SetActive(false);
             _mainMenu.Init();
         }
 
@@ -26,6 +30,8 @@ namespace LastBastion.Game
         {
             _mainMenu.Activate();
             _settingsMenu.Activate();
+
+            YandexGame.GameReadyAPI();
         }
 
         private void OnDisable()
@@ -41,8 +47,11 @@ namespace LastBastion.Game
             _gameProcessor.StartGame();
         }
 
-        private void OnEndGame()
+        private void OnEndGame(bool isWon)
         {
+            if (isWon)
+                _victoriousPanel.SetActive(true);
+
             _mainMenu.Activate();
             _settingsMenu.Activate();
         }

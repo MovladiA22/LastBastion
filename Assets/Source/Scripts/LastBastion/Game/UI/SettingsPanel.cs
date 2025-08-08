@@ -3,7 +3,7 @@ using LastBastion.Game.Menu;
 using Common.UI.Input;
 using UnityEngine;
 
-namespace LastBastion.Game
+namespace LastBastion.Game.UI
 {
     internal class SettingsPanel : ActiveSwitcherUsingButton, IActivable
     {

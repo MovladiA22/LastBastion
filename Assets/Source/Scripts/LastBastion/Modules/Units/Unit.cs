@@ -70,7 +70,7 @@ namespace LastBastion.Units
 
         public override void InvokeReleaseEvent()
         {
-            _health.ReplenishFullValue();
+            _health.SetValue(_health.MaxValue);
 
             base.InvokeReleaseEvent();
         }

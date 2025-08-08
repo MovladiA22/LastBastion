@@ -488,7 +488,7 @@ MonoBehaviour:
   _attackTrigger: {fileID: 800033931059518826}
   _damageValue: 10
   _attackCooldown: 2
-  _damageDelay: 0.9
+  _damageDelay: 1
   <AttackSound>k__BackingField: {fileID: 3587005759232270138}
 --- !u!114 &8005069872594585908
 MonoBehaviour:

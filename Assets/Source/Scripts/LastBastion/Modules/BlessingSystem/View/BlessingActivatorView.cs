@@ -11,9 +11,9 @@ namespace LastBastion.BlessingSystem.View
         [SerializeField] private BlessingActivator _blessingActivator;
         [SerializeField] private VariableIntTextRenderer _faithPointsRenderer;
 
-        protected override IVariableInt Level => _blessingActivator.Level;
+        protected override IVariable<int> Level => _blessingActivator.Level;
 
-        protected override IVariableInt Money =>_blessingActivator.FaithPoints;
+        protected override IVariable<int> Money =>_blessingActivator.FaithPoints;
 
         public void Init()
         {

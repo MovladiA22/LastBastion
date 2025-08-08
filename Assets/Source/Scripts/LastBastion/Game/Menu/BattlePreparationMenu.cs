@@ -2,6 +2,7 @@
 using Common.UI;
 using UnityEngine;
 using Common.UI.Input;
+using LastBastion.Game.UI;
 using LastBastion.Game.View;
 using LastBastion.Bases.PlayerBase;
 

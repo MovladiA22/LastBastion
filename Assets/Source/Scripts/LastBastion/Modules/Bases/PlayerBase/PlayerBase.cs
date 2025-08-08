@@ -27,8 +27,8 @@ namespace LastBastion.Bases.PlayerBase
         private Money _money;
 
         public UpgradeLevel Level => _healthUpgrader.Level;
-        public IVariableInt Provisions => _provisions;
-        public IVariableInt Money => _money;
+        public IVariable<float> Provisions => _provisions;
+        public IVariable<int> Money => _money;
 
         public override void Init()
         {
@@ -62,24 +62,33 @@ namespace LastBastion.Bases.PlayerBase
             base.Deactivate();
             _provisions.OnOutOfProvisions -= Collapse;
 
-            _money.ReplenishFullValue();
-            _provisions.ReplenishFullValue();
+            _money.SetValue(_money.MaxValue);
+            _provisions.SetValue(_provisions.MaxValue);
 
             _defensiveSystem.Deactivate();
             _church.Deactivate();
         }
 
-        public void SetMoneyValue(int amount) =>
+        public void SetMoneyValue(int amount)
+        {
             _money.SetMaxValue(amount);
+            _money.SetValue(_money.MaxValue);
+        }
 
-        public void Upgrade() =>
+        public void Upgrade()
+        {
             Health.SetMaxValue(_healthUpgrader.GetUpgradedValue());
+            Health.SetValue(Health.MaxValue);
+        }
 
         public void Restore(int value) =>
             Health.Increase(value);
 
-        public void ResetProgress() =>
+        public void ResetProgress()
+        {
             _money.SetMaxValue(_amountOfMoney);
+            _money.SetValue(_money.MaxValue);
+        }
 
         public bool TryPay(int price)
         {

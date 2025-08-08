@@ -2,6 +2,8 @@
 using LastBastion.Bases.PlayerBase;
 using LastBastion.Bases.EnemyBase;
 using System.Collections.Generic;
+using LastBastion.Game.Menu;
+using LastBastion.Game.UI;
 using UnityEngine;
 using System;
 
@@ -9,7 +11,8 @@ namespace LastBastion.Game
 {
     internal class LevelLauncher : MonoBehaviour, IInitializable
     {
-        const int LevelIndexlOffset = 1;
+        public const int FirstLevel = 1;
+        private const int LevelIndexlOffset = 1;
 
         [SerializeField] private PlayerBase _playerBase;
         [SerializeField] private List<EnemyBase> _enemyBases;
@@ -22,7 +25,7 @@ namespace LastBastion.Game
         public event Action OnLevelPassed;
         public event Action OnLevelLost;
 
-        public int CurrentLevel { get; private set; } = 1;
+        public int CurrentLevel { get; private set; }
         public int NumberOfLevels => _enemyBases.Count;
 
         private void OnEnable()
@@ -44,6 +47,7 @@ namespace LastBastion.Game
 
         public void Init()
         {
+            CurrentLevel = FirstLevel;
             _playerBase.Init();
 
             foreach (var enemyBase in _enemyBases)
@@ -95,6 +99,7 @@ namespace LastBastion.Game
 
         public void ResetProgress()
         {
+            CurrentLevel = FirstLevel;
             _playerBase.ResetProgress();
         }
 
@@ -104,10 +109,10 @@ namespace LastBastion.Game
             LaunchLevel();
         }
 
-        private void OnInvokeLevelPassedEvent() =>
+        public void OnInvokeLevelPassedEvent() =>
             OnLevelPassed?.Invoke();
 
-        private void OnInvokeLevelLostEvent() =>
+        public void OnInvokeLevelLostEvent() =>
             OnLevelLost?.Invoke();
     }
 }

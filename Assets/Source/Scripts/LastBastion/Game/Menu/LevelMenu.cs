@@ -1,11 +1,12 @@
 ﻿using LastBastion.Bases.PlayerBase.View;
 using Common.VariableSystem.Interfaces;
+using Common.VariableSystem;
 using Common.UI.Output;
 using Common.Audio;
 using UnityEngine;
 using Common.UI;
 
-namespace LastBastion.Game
+namespace LastBastion.Game.Menu
 {
     internal class LevelMenu : UIMenu
     {
@@ -40,10 +41,10 @@ namespace LastBastion.Game
             base.Deactivate();
         }
 
-        public void SetHealthBar(IVariableInt playerHealth, IVariableInt enemyHealth)
+        public void SetHealthBar(IVariable<int> playerHealth, IVariable<int> enemyHealth)
         {
-            _playerBar.SetVariable(playerHealth);
-            _enemyBar.SetVariable(enemyHealth);
+            _playerBar.SetVariable(new IntVariableToFloatConverter(playerHealth));
+            _enemyBar.SetVariable(new IntVariableToFloatConverter(enemyHealth));
         }
     }
 }

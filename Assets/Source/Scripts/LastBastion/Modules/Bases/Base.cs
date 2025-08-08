@@ -22,7 +22,7 @@ namespace LastBastion.Bases
 
         [field: SerializeField] protected BaseGarrison Garrison { get; private set; }
 
-        public IVariableInt IHealth => Health;
+        public IVariable<int> IHealth => Health;
         protected Health Health { get; private set; }
 
         public override void Init()
@@ -37,7 +37,7 @@ namespace LastBastion.Bases
         {
             base.Activate();
 
-            Health.ReplenishFullValue();
+            Health.SetValue(Health.MaxValue);
             Garrison.Activate();
 
             _workCoroutine.Run();

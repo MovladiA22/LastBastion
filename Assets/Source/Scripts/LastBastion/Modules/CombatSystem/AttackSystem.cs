@@ -47,6 +47,7 @@ namespace LastBastion.CombatSystem
             _attackTrigger.OnEntered -= _keeperOfTriggerdOpponents.AddOpponent;
             _attackTrigger.OnLeft -= _keeperOfTriggerdOpponents.RemoveOpponent;
 
+            _damageDelayTimer.Stop();
             _keeperOfTriggerdOpponents.RemoveAllOpponents();
         }
 
@@ -72,13 +73,6 @@ namespace LastBastion.CombatSystem
             return false;
         }
 
-        public void HandleAttack()
-        {
-            OnAttacked?.Invoke();
-            AttackSound.Play();
-            CooldownTimer.Run();
-        }
-
         protected virtual void Attack()
         {
             if (CooldownTimer.IsTimeUp == false)
@@ -91,8 +85,15 @@ namespace LastBastion.CombatSystem
 
         protected virtual void DelayDamage()
         {
-            if (gameObject == null || _keeperOfTriggerdOpponents.GetFirstOpponent() == null)
+            if (_keeperOfTriggerdOpponents.IsEmpty)
                 return;
+        }
+
+        protected void HandleAttack()
+        {
+            OnAttacked?.Invoke();
+            AttackSound.Play();
+            CooldownTimer.Run();
         }
     }
 }

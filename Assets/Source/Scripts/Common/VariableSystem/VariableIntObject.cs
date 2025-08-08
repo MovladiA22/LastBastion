@@ -1,41 +1,34 @@
-using Common.VariableSystem.Interfaces;
 using System;
+using UnityEngine;
 
 namespace Common.VariableSystem
 {
-    public class VariableIntObject : IVariableInt
+    public class VariableIntObject : VariableObject<int>
     {
-        public VariableIntObject(int maxValue)
-        {
-            SetMaxValue(maxValue);
-        }
+        public VariableIntObject(int maxValue) : base(maxValue) { }
 
-        public event Action OnChanged;
-
-        public int MaxValue {  get; private set; }
-        public int CurrentValue {  get; private set; }
-
-        public void SetMaxValue(int maxValue)
+        public override void SetMaxValue(int maxValue)
         {
             if (maxValue <= 0)
                 throw new ArgumentOutOfRangeException(nameof(maxValue));
 
-            MaxValue = maxValue;
-            CurrentValue = maxValue;
-
-            OnChanged?.Invoke();
+            base.SetMaxValue(maxValue);
         }
 
-        public void ReplenishFullValue() =>
-            Increase(MaxValue);
+        public override void SetValue(int value)
+        {
+            if (value < 0 || value > MaxValue)
+                throw new ArgumentOutOfRangeException(nameof(value));
+
+            base.SetValue(value);
+        }
 
         public void Decrease(int amount)
         {
             if (amount < 0)
                 throw new ArgumentOutOfRangeException(nameof(amount));
 
-            CurrentValue = Math.Max(CurrentValue - amount, 0);
-            OnChanged?.Invoke();
+            SetValue(Math.Max(CurrentValue - amount, 0));
         }
 
         public void Increase(int amount)
@@ -43,8 +36,7 @@ namespace Common.VariableSystem
             if (amount < 0)
                 throw new ArgumentOutOfRangeException(nameof(amount));
 
-            CurrentValue = Math.Min(CurrentValue + amount, MaxValue);
-            OnChanged?.Invoke();
+            SetValue(Math.Min(CurrentValue + amount, MaxValue));
         }
     }
 }

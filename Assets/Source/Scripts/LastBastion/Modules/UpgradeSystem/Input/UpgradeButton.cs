@@ -1,6 +1,6 @@
 ﻿using LastBastion.UpgradeSystem.Interfaces;
 using Common.UnityUtilities.Behaviors;
-using LastBastion.UpgradeSystem.View;
+using Common.UI.Output;
 using UnityEngine;
 using System;
 
@@ -10,7 +10,7 @@ namespace LastBastion.UpgradeSystem.Input
     {
         [SerializeField] private UpgradedButtonClickHandler _upgradedButton;
         [SerializeField] private DowngradedButtonClickHandler _downgradedButton;
-        [SerializeField] private UpgradedLevelRenderer _upgradeLevelRenderer;
+        [SerializeField] private VariableIntTextRenderer _upgradeLevelRenderer;
 
         public event Action<IUpgradable> OnUpgradeClicked;
         public event Action<IUpgradable> OnDowngradeClicked;

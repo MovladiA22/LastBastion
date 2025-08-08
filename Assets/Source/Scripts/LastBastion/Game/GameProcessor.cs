@@ -13,7 +13,9 @@ namespace LastBastion.Game
         [SerializeField] private ButtonClickHandler _levelStartButton;
         [SerializeField] private MusicRunner _menuBackground;
 
-        public event Action OnGameOver;
+        private bool _isWon = false;
+
+        public event Action<bool> OnGameOver;
 
         private void Awake()
         {
@@ -41,6 +43,8 @@ namespace LastBastion.Game
 
         public void StartGame()
         {
+            _isWon = false;
+
             _battlePreparationMenu.Activate();
         }
 
@@ -50,7 +54,7 @@ namespace LastBastion.Game
             _battlePreparationMenu.ResetProgress();
             _battlePreparationMenu.Deactivate();
 
-            OnGameOver?.Invoke();
+            OnGameOver?.Invoke(_isWon);
         }
 
         private void OnHandleLevelStart()
@@ -63,7 +67,6 @@ namespace LastBastion.Game
 
         private void OnHandleDefeat()
         {
-            Debug.Log("Lose");
             _levelLauncher.EndUpLevel();
 
             _menuBackground.RunAudio();
@@ -72,16 +75,20 @@ namespace LastBastion.Game
 
         private void OnHandleVictory()
         {
-            if (_levelLauncher.CurrentLevel == _levelLauncher.NumberOfLevels)
-            {
-                Debug.Log("Win");
-            }
-
             _levelLauncher.EndUpLevel();
             _menuBackground.RunAudio();
 
-            _levelLauncher.SetNextLevel();
-            _battlePreparationMenu.Activate();
+            if (_levelLauncher.CurrentLevel == _levelLauncher.NumberOfLevels)
+            {
+                _isWon = true;
+
+                EndGame();
+            }
+            else
+            {
+                _levelLauncher.SetNextLevel();
+                _battlePreparationMenu.Activate();
+            }
         }
     }
 }

@@ -7,7 +7,7 @@ namespace LastBastion.CombatSystem.Logic
 {
     public class KeeperOfTriggerdOpponents : IKeeperOpponents
     {
-        private readonly List<IDamageable> _opponents;
+        private List<IDamageable> _opponents;
 
         public KeeperOfTriggerdOpponents()
         {
@@ -37,7 +37,7 @@ namespace LastBastion.CombatSystem.Logic
         public void RemoveAllOpponents()
         {
             foreach (var opponent in _opponents.ToList())
-                RemoveOpponent(opponent);
+                opponent.OnHealthIsOver -= RemoveOpponent;
 
             _opponents.Clear();
         }

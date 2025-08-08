@@ -4,7 +4,7 @@ namespace Common.Interfaces
 {
     public interface IPayable
     {
-        IVariableInt Money { get;}
+        IVariable<int> Money { get;}
 
         bool TryPay(int price);
     }

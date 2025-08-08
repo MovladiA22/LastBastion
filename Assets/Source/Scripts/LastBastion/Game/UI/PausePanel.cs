@@ -3,7 +3,7 @@ using Common.UI.Input;
 using UnityEngine;
 using System;
 
-namespace LastBastion.Game
+namespace LastBastion.Game.UI
 {
     internal class PausePanel : ActiveSwitcherUsingButton
     {

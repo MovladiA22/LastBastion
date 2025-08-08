@@ -6,7 +6,7 @@ namespace Common.UI.Output
 {
     public class VariableIntTextRenderer : TextRenderer, IActivable
     {
-        private IVariableInt _variable;
+        private IVariable<int> _variable;
 
         public bool IsActivated { get; private set; }
 
@@ -40,7 +40,7 @@ namespace Common.UI.Output
             _variable.OnChanged -= RenderVariable;
         }
 
-        public void SetVariable(IVariableInt variable) =>
+        public void SetVariable(IVariable<int> variable) =>
             _variable = variable ?? throw new ArgumentNullException(nameof(variable));
 
         private void RenderVariable() =>

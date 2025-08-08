@@ -15,14 +15,13 @@ namespace LastBastion.CombatSystem
         {
             base.Awake();
 
+            _arrowStartPosition = _projectile.transform.localPosition;
             _outOfBoundsTrigger.SetProjectile(_projectile);
         }
 
         protected override void OnEnable()
         {
             base.OnEnable();
-
-            _arrowStartPosition = _projectile.transform.localPosition;
 
             _projectile.OnHitTarget += Damager.DealDamage;
         }

@@ -27,7 +27,7 @@ namespace Common.UI.Input
             _button.onClick.RemoveListener(OnSwitchObjectActive);
         }
 
-        protected void ClickOnButton()
+        public void ClickOnButton()
         {
             _button.onClick?.Invoke();
         }

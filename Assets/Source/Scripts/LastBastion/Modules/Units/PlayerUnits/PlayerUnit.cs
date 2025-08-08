@@ -7,6 +7,13 @@ namespace LastBastion.Units.PlayerUnits
     {
         public bool IsInvulnerable { get; set; }
 
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+
+            IsInvulnerable = false;
+        }
+
         public override void TakeDamage(int amount)
         {
             if (IsInvulnerable)
