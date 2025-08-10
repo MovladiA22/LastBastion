@@ -19,12 +19,11 @@ namespace LastBastion.Game
         [SerializeField] private LevelMenu _battleMenuView;
         [SerializeField] private PausePanel _pauseMenu;
 
-        private bool _isLevelActivate = false;
-
         public event Action OnLevelChanged;
         public event Action OnLevelPassed;
         public event Action OnLevelLost;
 
+        public bool IsLevelActivate { get; private set; } = false;
         public int CurrentLevel { get; private set; }
         public int NumberOfLevels => _enemyBases.Count;
 
@@ -62,7 +61,7 @@ namespace LastBastion.Game
 
         public void SetNextLevel()
         {
-            if (_isLevelActivate == false && CurrentLevel < NumberOfLevels)
+            if (IsLevelActivate == false && CurrentLevel < NumberOfLevels)
             {
                 CurrentLevel++;
                 OnLevelChanged?.Invoke();
@@ -71,7 +70,7 @@ namespace LastBastion.Game
 
         public void LaunchLevel()
         {
-            if (_isLevelActivate)
+            if (IsLevelActivate)
                 return;
             else if (CurrentLevel > NumberOfLevels)
                 return;
@@ -82,18 +81,18 @@ namespace LastBastion.Game
             _battleMenuView.SetHealthBar(_playerBase.IHealth, _enemyBases[CurrentLevel - LevelIndexlOffset].IHealth);
             _battleMenuView.Activate();
 
-            _isLevelActivate = true;
+            IsLevelActivate = true;
         }
 
         public void EndUpLevel()
         {
-            if (_isLevelActivate)
+            if (IsLevelActivate)
             {
                 _playerBase.Deactivate();
                 _enemyBases[CurrentLevel - LevelIndexlOffset].Deactivate();
 
                 _battleMenuView.Deactivate();
-                _isLevelActivate = false;
+                IsLevelActivate = false;
             }
         }
 

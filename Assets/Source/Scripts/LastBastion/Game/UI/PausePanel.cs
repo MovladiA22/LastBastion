@@ -9,12 +9,14 @@ namespace LastBastion.Game.UI
     {
         [SerializeField] private PauseMenu _pauseMenu;
         [SerializeField] private SettingsPanel _settingsMenu;
-        [SerializeField] private ButtonClickHandler _cancelPauseButton;
         [SerializeField] private ButtonClickHandler _restartButton;
         [SerializeField] private ButtonClickHandler _returnHomeButton;
+        [SerializeField] private ButtonClickHandler _cancelPauseButton;
 
         public event Action OnClickedRestart;
         public event Action OnClickedReturn;
+
+        public bool IsPaused { get; private set; } = false;
 
         protected override void Awake()
         {
@@ -57,6 +59,8 @@ namespace LastBastion.Game.UI
                 _pauseMenu.Activate();
                 _settingsMenu.Activate();
             }
+
+            IsPaused = !isActive;
         }
 
         private void OnHandleRestartClick()

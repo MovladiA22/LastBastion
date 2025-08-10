@@ -40,6 +40,7 @@ namespace Common.Audio
 
         private void ChangeVolume(float volume)
         {
+            float _muteValue = -80f;
             float _multiplier = 20f;
 
             if (volume == _volumeSlider.minValue && _muteToggle.isOn == false)
@@ -50,7 +51,7 @@ namespace Common.Audio
             if (_mixer.audioMixer.GetFloat(_mixer.name, out float value))
             {
                 if (value == _volumeSlider.minValue)
-                    volume = -80f;
+                    volume = _muteValue;
                 else
                     volume = Mathf.Log10(volume) * _multiplier;
 
